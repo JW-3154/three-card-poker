@@ -1,0 +1,10 @@
+{
+    "__comment__":"These are for the UX effects",
+    "user_max_tries": 3,
+    "draw_card_delay_seconds": 0.8,
+    "reveal_dealer_hand_delay_seconds": 1.2,
+    "fold_delay_seconds": 0.8,
+
+    "__comment1__":"This decides maximum amount money player can get when they are cheating",
+    "cheat_amount": 999999999
+}

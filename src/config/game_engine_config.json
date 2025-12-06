@@ -1,0 +1,20 @@
+{
+    "__comment__":"All these non-zero integers can be modified",
+    "ante_bonus_payout_rate_table": {"0": 0, "1": 0, "2": 0, "3": 1, "4": 4, "5": 5},
+    "pair_plus_payout_rate_table": {"0": 0, "1": 1, "2": 4, "3": 6, "4": 30, "5": 40},
+    "cal_ante_bonus_payout_rate_table": {"0": 0, "1": 0, "2": 0, "3": 1, "4": 4, "5": 5, "6":25},
+    "cal_pair_plus_payout_rate_table": {"0": 0, "1": 1, "2": 3, "3": 6, "4": 30, "5": 40, "6":200},
+    "player_initial_balance": 1000,
+
+    "__comment1__":"This boolean decides if max_ante_bet and max_pair_plus_bet applied",
+    "is_table_limit_enabled": false,
+
+    "__comment2__":"If you do not understand about the game logic, do not modify these numbers",
+    "limits": {
+        "game_ends_if_balance_is_less_than": 200,
+        "min_ante_bet": 100,
+        "min_pair_plus_bet": 10,
+        "max_ante_bet": 500,
+        "max_pair_plus_bet": 400
+    }
+}

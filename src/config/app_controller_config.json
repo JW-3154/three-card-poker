@@ -1,0 +1,5 @@
+{
+    "__comment__":"These are the UX effects when the user chooses to read the rules",
+    "text_rolling_delay_seconds":0.25,
+    "max_waited_seconds":2.0
+}
