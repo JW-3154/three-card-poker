@@ -106,12 +106,8 @@ class GameEngine:
         return self.__player.play_bet
     
     @property
-    def has_sufficient_balance(self) -> bool:
-        return self.__player.balance >= self.LIMITS_TABLE["game_ends_if_balance_is_less_than"]
-    
-    @property
     def GAME_ENDING_CONDITION(self) -> int:
-        return self.LIMITS_TABLE["game_ends_if_balance_is_less_than"]
+        return self.MIN_ANTE_BET * 2
     
     @property
     def MIN_ANTE_BET(self) -> int:
@@ -136,7 +132,11 @@ class GameEngine:
         ante_upper_bound = min(balance_limit, table_limit)
         
         return ante_upper_bound
-        
+    
+    @property
+    def has_sufficient_balance(self) -> bool:
+        return self.max_ante_bet > self.MIN_ANTE_BET
+    
     @property
     def max_pair_plus_bet(self) -> int:
         # Here, after placing the ante bet but before the play bet (ante -> pair_plus -> play)

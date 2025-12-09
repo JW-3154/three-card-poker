@@ -21,7 +21,7 @@ class GameController:
 
     @property
     def skip_pair_plus(self) -> bool:
-        return self.game.MIN_PAIR_PLUS_BET > self.game.player_balance - self.game.ante_bet
+        return self.game.MIN_PAIR_PLUS_BET > self.game.max_pair_plus_bet
     
     def _debug(self) -> ActionResult:
         """
