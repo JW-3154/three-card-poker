@@ -50,4 +50,3 @@ class UIKeys(StrEnum):
     DEALER_NOT_QUALIFIED = auto()
     WIN = auto()
     PUSH = auto()
-    GAME_OVER_BALANCE = auto()

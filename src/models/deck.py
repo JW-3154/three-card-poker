@@ -34,6 +34,5 @@ class Deck:
     def janitor(self) -> None:
         """
         Reset cursor to the top of the deck.
-        This method will be called by game engine when the deck is empty.
         """
         self.top = 0
