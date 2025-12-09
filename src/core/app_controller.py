@@ -264,7 +264,7 @@ class AppController:  # << El Jefe 🚬😎🥃
             '2':self.read_rules,
             '3':self.exit_game,
             '4':self.switch_language,
-            '1337':self.game_ctrl._debug
+            '1337':self.game_ctrl._cheat
         }
 
         pair_plus_round_options = {

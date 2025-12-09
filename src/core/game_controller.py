@@ -23,7 +23,7 @@ class GameController:
     def skip_pair_plus(self) -> bool:
         return self.game.MIN_PAIR_PLUS_BET > self.game.max_pair_plus_bet
     
-    def _debug(self) -> ActionResult:
+    def _cheat(self) -> ActionResult:
         """
         It's a cheat function for testing purpose.
         1. Check if player already cheated

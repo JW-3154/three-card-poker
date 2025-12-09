@@ -135,7 +135,7 @@ class GameEngine:
     
     @property
     def has_sufficient_balance(self) -> bool:
-        return self.max_ante_bet > self.MIN_ANTE_BET
+        return self.max_ante_bet >= self.MIN_ANTE_BET
     
     @property
     def max_pair_plus_bet(self) -> int:
