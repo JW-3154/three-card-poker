@@ -12,6 +12,21 @@ class StandardEvaluator(GameEvaluator):
     """
     Implements the standard hand evaluation logic for Three Card Poker.
     """
+    def get_formatted_hand(self, hand: list[Card]) -> list[Card]:
+        """
+        Format the hand for display, 
+        providing an interface for the game controller to-
+        prevent it from knowing too much logic.
+        
+        Args:
+            hand (list[Card]): A list of Card objects representing a hand.
+        Returns:
+            list[Card]: A list of Card objects representing the formatted hand.
+        """
+        values = tuple(card.value for card in hand)
+        if values == (14, 3, 2):
+            return [hand[1], hand[2], hand[0]]
+        return hand
     
     def get_virtual_hand(self, physical_hand: list[Card]) -> VirtualHand:
 

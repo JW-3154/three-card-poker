@@ -13,8 +13,8 @@
     "exit_prompt": "Thank you for playing Three Card Poker, hope to see you again~~~",
     "press_enter_to_exit": "Please press Enter again to exit...",
     "file_not_found_error_prompt": "File not found, please check if the path is correct!",
-    "player_cheated": "\n⚡ POWAH! UN-LI-MI-TED POWAH! ⚡\n--------------------------------",
-    "player_already_cheated": "⚠️ Warning: You have already used the cheat, it cannot be used again! ⚠️",
+    "player_cheated": "\n[SYSTEM_OVERRIDE] ACCESS GRANTED: ROOT_PRIVILEGES...\nInjecting payload...\nTransfer complete: $999,999,999\nroot@three-card-poker:~$",
+    "player_already_cheated": "Warning: You have already used the cheat, it cannot be used again!",
     "player_balance_already_high_enough": "Your balance is already higher than the cheat amount, no need to cheat!",
     "user_choice_not_in_options_prompt": "Your input is invalid! Please check your input!",
     "insufficient_balance_prompt": "Your balance is below $$${limit}, game over!",
@@ -42,5 +42,16 @@
     "lose": "Unfortunately, you lost!",
     "dealer_not_qualified": "Dealer does not qualify",
     "win": "Congratulations, you won $$${amount} chips!",
-    "push": "Push! Your ante and play bets have been returned!"
+    "push": "Push! Your ante and play bets have been returned!",
+
+    "__comment__": "The following are used for card formatting on screen reader mode",
+    "suit_spade": "Spades",
+    "suit_club": "Clubs",
+    "suit_heart": "Hearts",
+    "suit_diamond": "Diamonds",
+    "rank_A": "Ace",
+    "rank_J": "Jack",
+    "rank_Q": "Queen",
+    "rank_K": "King",
+    "card_pattern": "${rank} of ${suit}"
 }

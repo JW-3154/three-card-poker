@@ -1,5 +1,6 @@
 from src.models.deck import Deck
 
+# == for type hints ==
 from src.enums.hand_rank import HandRank
 from src.models.card import Card
 from src.models.participants import Participants
@@ -156,11 +157,11 @@ class GameEngine:
     
     @property
     def player_hand(self) -> list[Card]:
-        return self.__player.hand
+        return self.evaluator.get_formatted_hand(self.__player.hand)
     
     @property
     def dealer_hand(self) -> list[Card]:
-        return self.__dealer.hand
+        return self.evaluator.get_formatted_hand(self.__dealer.hand)
     
     
     # setting player balance and bets
@@ -193,18 +194,16 @@ class GameEngine:
         self.__player.pair_plus_bet = amount
         
     def place_play_bet(self):
+        self.deduct_player_balance(self.__player.play_bet) 
         self.__player.play_bet = self.__player.ante_bet
         
-        # The value is already valid, no need to validate again
-        self.deduct_player_balance(self.__player.play_bet) 
-        
-    def refund_ante_bet(self):
+    def return_ante_bet(self):
         self.add_player_balance(self.__player.ante_bet)
 
-    def refund_play_bet(self):
+    def return_play_bet(self):
         self.add_player_balance(self.__player.play_bet)
 
-    def refund_pair_plus_bet(self):
+    def return_pair_plus_bet(self):
         self.add_player_balance(self.__player.pair_plus_bet)
         
     # Dealing and sorting cards
@@ -300,7 +299,7 @@ class GameEngine:
         pair_plus_payout: int = 0
         
         if had_pair_plus_bet and player_hand_rank_value >= HandRank.PAIR:
-            self.refund_pair_plus_bet()
+            self.return_pair_plus_bet()
             pair_plus_payout = self.calculate_pair_plus_payout(player_hand_rank_value)
             self.add_player_balance(pair_plus_payout)
 
@@ -323,15 +322,15 @@ class GameEngine:
                 
             case None:
                 
-                self.refund_ante_bet()
-                self.refund_play_bet()
+                self.return_ante_bet()
+                self.return_play_bet()
                 
                 settle_table.update({'outcome':'push','winnings':winnings}) 
                 
             case True:
                 
-                self.refund_ante_bet()
-                self.refund_play_bet()
+                self.return_ante_bet()
+                self.return_play_bet()
     
                 if not is_dealer_qualified: # Dealer does not qualify, player only wins the ante bet
                     winnings = self.__player.ante_bet
