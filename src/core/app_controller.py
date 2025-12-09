@@ -90,7 +90,7 @@ class AppController:  # << El Jefe 🚬😎🥃
     def exit_game(self) -> None:
         self.view.show_message(UIKeys.EXIT_PROMPT)
         self.view.get_input(UIKeys.PRESS_ENTER_TO_EXIT)
-        exit()
+        sys.exit(0)
     
     def get_valid_input(self, prompt_key: UIKeys, valid_options: list[str]) -> str:
         """
