@@ -15,6 +15,7 @@
     "file_not_found_error_prompt": "File not found, please check if the path is correct!",
     "player_cheated": "\n⚡ POWAH! UN-LI-MI-TED POWAH! ⚡\n--------------------------------",
     "player_already_cheated": "⚠️ Warning: You have already used the cheat, it cannot be used again! ⚠️",
+    "player_balance_already_high_enough": "Your balance is already higher than the cheat amount, no need to cheat!",
     "user_choice_not_in_options_prompt": "Your input is invalid! Please check your input!",
     "insufficient_balance_prompt": "Your balance is below $$${limit}, game over!",
     "show_player_balance": "Your balance is $$${balance}",

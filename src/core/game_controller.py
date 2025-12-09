@@ -33,6 +33,9 @@ class GameController:
         if self.__has_cheated:
             self.view.show_message(UIKeys.PLAYER_ALREADY_CHEATED)
             return ActionResult.CONTINUE
+        if self.game.player_balance >= self.config['cheat_amount']:
+            self.view.show_message(UIKeys.PLAYER_BALANCE_ALREADY_HIGH_ENOUGH)
+            return ActionResult.CONTINUE
         
         self.game.add_player_balance(self.config['cheat_amount'] - self.game.player_balance)
         

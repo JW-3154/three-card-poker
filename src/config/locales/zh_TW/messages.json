@@ -15,6 +15,7 @@
     "file_not_found_error_prompt": "檔案未找到，請檢查路徑是否正確!",
     "player_cheated": "\n⚡ POWAH! UN-LI-MI-TED POWAH! ⚡\n--------------------------------",
     "player_already_cheated": "⚠️ 警告：您已經使用過作弊，無法再次使用！ ⚠️",
+    "player_balance_already_high_enough": "您的餘額已經超出作弊獲得的金額，無需作弊！",
     "user_choice_not_in_options_prompt":" 您的輸入有誤！請檢查您的輸入！",
     "insufficient_balance_prompt": "您的餘額不足$$${limit}, 遊戲結束！",
     "show_player_balance": "您的餘額為$$${balance}",

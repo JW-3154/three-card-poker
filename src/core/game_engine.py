@@ -348,6 +348,7 @@ class GameEngine:
 
         self.__player.clear_hand()
         self.__dealer.clear_hand()
+        self.__deck.janitor() # Reset the deck cursor to the top
         
         # Reset player state, including ante bet, pair plus bet, and play bet amounts
         self.__player.reset_bets()

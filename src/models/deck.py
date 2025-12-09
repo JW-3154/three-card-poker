@@ -18,7 +18,6 @@ class Deck:
         return f'Deck(There are: {len(self.cards)} cards)\ncards: {self.cards}'
 
     def shuffle(self):
-        self.top = 0
         random.shuffle(self.cards)
         
     def remove_from_deck(self) -> Card:
@@ -31,3 +30,10 @@ class Deck:
         card = self.cards[self.top]
         self.top += 1
         return card
+
+    def janitor(self) -> None:
+        """
+        Reset cursor to the top of the deck.
+        This method will be called by game engine when the deck is empty.
+        """
+        self.top = 0

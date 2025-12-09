@@ -3,17 +3,8 @@ from src.models.card import Card
 
 class Participants:
     def __init__(self):
-        self.hand_buffer:list[Card] = [None] * 3
+        self.hand:list[Card | None] = [None] * 3
         self.top = 0
-
-    @property
-    def hand(self) -> list[Card]:
-        """Get the current hand of the participant.
-
-        Returns:
-            list[Card]: A list of Card objects representing the participant's hand.
-        """
-        return self.hand_buffer
     
     def receive_card(self, card: Card) -> None:
         """Receive a card and add it to the participant's hand.
@@ -21,7 +12,7 @@ class Participants:
         Args:
             card (Card): The card to be added to the hand.
         """
-        self.hand_buffer[self.top] = card
+        self.hand[self.top] = card
         self.top += 1
         
     def clear_hand(self):
@@ -34,7 +25,7 @@ class Participants:
         """
         Sort the participant's hand in descending order based on card value.
         """
-        self.hand_buffer.sort(key=lambda x:x.value, reverse=True)
+        self.hand.sort(key=lambda x:x.value, reverse=True)
         
 
 class Dealer(Participants):
