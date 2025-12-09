@@ -1,7 +1,6 @@
 from src.enums.action_result import ActionResult
 from src.enums.ui_keys import UIKeys
 from src.errors.int_input_not_in_legal_range import IntInputNotInLegalRangeError
-from src.utils.hand_formatter import format_hand
 from src.core.game_engine import GameEngine
 from src.views.interfaces.view_protocols import GameView
 
@@ -153,7 +152,7 @@ class GameController:
         self.game.shuffle_deck()
         
         # This is three card poker, each participant draws 3 cards
-        # DO NOT TOUCH THIS CONST, OR EVERYTHING COLLAPSES
+        # DO NOT TOUCH THIS CONST, OR EVERYTHING BREAKS
         THREE_TIMES = 3
         
         for _ in range(THREE_TIMES):
@@ -176,7 +175,7 @@ class GameController:
         
         self.view.show_message(
             UIKeys.SHOW_PLAYER_HAND,
-            hand=format_hand(self.game.player_hand)
+            hand=self.game.player_hand
         )
     
     def compare_hand_and_settle(self) -> None:
@@ -194,14 +193,14 @@ class GameController:
         
         self.view.show_message(
             UIKeys.SHOW_PLAYER_HAND,
-            hand=format_hand(self.game.player_hand)
+            hand=self.game.player_hand
         )
         
         self.view.wait(self.config['reveal_dealer_hand_delay_seconds'])
 
         self.view.show_message(
             UIKeys.SHOW_DEALER_HAND,
-            hand=format_hand(self.game.dealer_hand)
+            hand=self.game.dealer_hand
         )
         
         settle_res = self.game.settle()

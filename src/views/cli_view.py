@@ -1,5 +1,7 @@
 from src.views.interfaces.view_protocols import GameView
 from src.enums.ui_keys import UIKeys
+from src.views.cli_render import CliRender
+
 from string import Template
 from time import sleep
 
@@ -8,8 +10,21 @@ class CliView(GameView):
     implementation of a command-line interface view
     """
     
-    def __init__(self, message_config: dict[str, str] = None):
+    def __init__(
+        self,
+        renderer: CliRender = None,
+        message_config: dict[str, str] = None,
+        ):
+        self.renderer = renderer
         self.message_config = message_config if message_config is not None else {}
+        
+    def set_message_config(self, new_message_config: dict[str, str]):
+        """Hot swap method for the message config
+
+        Args:
+            new_message_config (dict[str, str]): The new message configuration to set.
+        """
+        self.message_config = new_message_config
 
     def get_text(self, key: UIKeys | str) -> str:
         """
@@ -64,10 +79,3 @@ class CliView(GameView):
     def wait(self, seconds: float) -> None:
         sleep(seconds)
         
-    def set_message_config(self, new_message_config: dict[str, str]):
-        """Hot swap method for the message config
-
-        Args:
-            new_message_config (dict[str, str]): The new message configuration to set.
-        """
-        self.message_config = new_message_config

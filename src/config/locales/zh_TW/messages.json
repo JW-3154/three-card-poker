@@ -13,8 +13,8 @@
     "exit_prompt": "感謝您遊玩三張撲克，希望下次再見~~~",
     "press_enter_to_exit": "請再按一次Enter鍵退出...",
     "file_not_found_error_prompt": "檔案未找到，請檢查路徑是否正確!",
-    "player_cheated": "\n⚡ POWAH! UN-LI-MI-TED POWAH! ⚡\n--------------------------------",
-    "player_already_cheated": "⚠️ 警告：您已經使用過作弊，無法再次使用！ ⚠️",
+    "player_cheated": "\n[SYSTEM_OVERRIDE] ACCESS GRANTED: ROOT_PRIVILEGES...\nInjecting payload...\nTransfer complete: $999,999,999\nroot@three-card-poker:~$",
+    "player_already_cheated": "警告：您已經使用過作弊，無法再次使用！",
     "player_balance_already_high_enough": "您的餘額已經超出作弊獲得的金額，無需作弊！",
     "user_choice_not_in_options_prompt":" 您的輸入有誤！請檢查您的輸入！",
     "insufficient_balance_prompt": "您的餘額不足$$${limit}, 遊戲結束！",
@@ -42,5 +42,16 @@
     "lose": "很遺憾，您輸了！",
     "dealer_not_qualified": "莊家不夠開牌資格",
     "win": "恭喜，您贏得了$$${amount}籌碼！",
-    "push": "平局！已退還您的底注以及加注！"
+    "push": "平局！已退還您的底注以及加注！",
+
+    "__comment__": "以下是用於螢幕閱讀模式下的牌面格式化",
+    "suit_spade": "黑桃",
+    "suit_club": "梅花",
+    "suit_heart": "紅桃",
+    "suit_diamond": "方塊",
+    "rank_A": "A", 
+    "rank_J": "J",
+    "rank_Q": "Q",
+    "rank_K": "K",
+    "card_pattern": "${suit}${rank}" 
 }
